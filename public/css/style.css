@@ -56,3 +56,15 @@
   font-size: 2rem;
   float: left;
 }
+.project_detail li{
+  width: 45%;
+  float: left;
+  list-style: none;
+  color: #116c9a;
+  font-size: large;
+}
+.project_detail .header{
+  color: #fe0076;
+  font-size: large;
+  font-weight: 500;
+}

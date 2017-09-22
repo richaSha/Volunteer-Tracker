@@ -18,9 +18,8 @@ get("/project") do
 end
 
 get("/project/:id") do
-  @id = params[:id]
-  @project_name = Projects.find_project(@id.to_i)
-  @volunteers_list = Volunteers.find_volunteers_info(@id.to_i)
-  binding.pry
+  id = params[:id]
+  @project_name = Projects.find_project(id.to_i)
+  @volunteers_list = Volunteers.find_volunteers_info(id.to_i)
   erb(:project_info)
 end
