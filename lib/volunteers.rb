@@ -1,0 +1,3 @@
+class Volunteers
+
+end
