@@ -45,4 +45,9 @@ class Projects
    false
  end
 
+ def self.find_project(id)
+   result = DB.exec("SELECT name FROM projects WHERE id = '#{id}'; ")
+   result[0]['name']
+ end
+
 end

@@ -1,0 +1,58 @@
+.jumbotron {
+  background-image: url(/img/banner.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  height: 250px;
+  margin-bottom:0 !important;
+}
+.container-fluid {
+  padding: 0 !important;
+}
+.breadcrumb {
+  margin: 20px 0;
+  background-color: #30cff3 !important;
+}
+.breadcrumb .active {
+  color:#fff !important;
+}
+.wrapper {
+  background: url(/img/volunteers.png) no-repeat;
+  background-position: bottom;
+  background-color: #65b32e;
+  background-blend-mode: normal;
+  position: relative;
+}
+.index_info, .project_info{
+  position: absolute;
+  width: 50%;
+  background: #ff8e00;
+  left: 25%;
+  top: 20%;
+  border-radius: 1rem;
+  color: #fff;
+  text-align: center;
+  border: 1px solid #9a5600;
+}
+.index_info{
+  padding: 1rem 10rem 4rem 10rem;
+}
+.project_info{
+  padding: 1rem 2rem 4rem 2rem;
+}
+.btn-danger {
+  color: #fff;
+  background-color: #fe0076 !important;
+  border-color: #d43f3a;
+  margin-top: 3rem;
+  width: -webkit-fill-available;
+}
+.btn-danger a{
+  color: #fff !important;
+}
+.project_list li {
+  width: 33%;
+  text-align: left;
+  font-size: 2rem;
+  float: left;
+}

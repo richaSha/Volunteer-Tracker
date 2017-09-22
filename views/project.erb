@@ -1,0 +1,14 @@
+<ul class="breadcrumb">
+  <li><a class= "active" href="/">Home</a></li>
+  <li><a class= "active" href="#">Project</a></li>
+</ul>
+<div class="wrapper">
+  <div class="project_info">
+    <h2>Project List</h2>
+    <ul class="project_list">
+      <% @project_list.each do |project| %>
+        <li><a href="/project/<%= project.id%>"><%= project.name%></a></li>
+      <% end %>
+    </ul>
+</div>
+</div>
