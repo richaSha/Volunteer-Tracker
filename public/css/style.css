@@ -1,3 +1,12 @@
+.search {
+    display: inline-block !important;
+    width: 60% !important;
+    height: 30px !important;
+}
+.btn-sm {
+  margin-left: -4px;
+  margin-top: -2px;
+}
 .jumbotron {
   background-image: url(/img/banner.png);
   background-size: cover;
@@ -67,4 +76,17 @@
   color: #fe0076;
   font-size: large;
   font-weight: 500;
+}
+.crud_icon{
+  position: absolute;
+  right: 1rem;
+  top: 0;
+  padding: 1rem;
+}
+.edit_input{
+  background: #c7b9b9;
+  color: #757575;
+}
+.project_delete{
+  display: inline-block !important;
 }

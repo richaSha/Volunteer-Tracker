@@ -1,0 +1,17 @@
+<ul class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li><a href="/volunteer">Volunteers</a></li>
+  <li><a class= "active" href="#"><%=@list['name'] %></a></li>
+</ul>
+<div class="wrapper">
+  <div class="index_info">
+    <h2><%=@list['name'] %></h2>
+    <ul class="project_detail">
+      <li class="header">Project Name:</li>
+      <li class="left" style="text-align:left"> <%= @project %></li>
+      <br>
+      <li class="header">Number of hour: </li>
+      <li class="left" style="text-align:left"> <%=@list['hour'] %></li>
+    </ul>
+</div>
+</div>

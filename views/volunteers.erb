@@ -1,21 +1,21 @@
 <ul class="breadcrumb">
   <li><a class= "active" href="/">Home</a></li>
-  <li><a class= "active" href="#">Projects</a></li>
+  <li><a class= "active" href="#">Volunteers</a></li>
 </ul>
 <div class="wrapper">
   <div class="project_info">
     <div class="crud_icon">
-      <a href="/add/project" class="btn btn-info btn-xs">
+      <a href="/add/volunteer" class="btn btn-info btn-xs">
         <span class="glyphicon glyphicon-plus"></span>
       </a>
-      <a href="/delete/project" class="btn btn-info btn-xs">
+      <a href="/delete/volunteer" class="btn btn-info btn-xs">
         <span class="glyphicon glyphicon-trash"></span>
       </a>
     </div>
-    <h2>Project List</h2>
+    <h2>Volunteer List</h2>
     <ul class="project_list">
-      <% @project_list.each do |project| %>
-        <li><a href="/project/<%= project.id%>"><%= project.name%></a></li>
+      <% @volunteer_list.each do |volunteer| %>
+        <li><a href="/volunteer/<%= volunteer.id%>"><%= volunteer.name%></a></li>
       <% end %>
     </ul>
 </div>

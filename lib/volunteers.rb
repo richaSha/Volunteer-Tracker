@@ -5,7 +5,7 @@ class Volunteers
     @id = (attribute.key?(:id) ?  attribute.fetch(:id) : nil)
     @project_id = (attribute.key?(:project_id) ?  attribute.fetch(:project_id) : 0)
     @name = attribute.fetch(:name)
-    @hour = (attribute.key?(:hour) ?  attribute.fetch(:hour) : nil)
+    @hour = (attribute.key?(:hour) ?  attribute.fetch(:hour) : '0')
   end
 
   def save
@@ -29,6 +29,15 @@ class Volunteers
     list
   end
 
+  def self.all_valunteer_name
+    valunteer_list = self.all()
+    list = []
+    valunteer_list.each do |valunteer|
+      list.push(valunteer.name)
+    end
+    list
+  end
+
   def self.add_project(name,project_id)
     DB.exec("UPDATE volunteers SET project_id = #{project_id} WHERE name = '#{name}';")
   end
@@ -38,7 +47,18 @@ class Volunteers
   end
 
   def self.find_project_id(name)
-    DB.exec("SELECT project_id FROM volunteers WHERE name = '#{name}'; ")
+    result = DB.exec("SELECT project_id FROM volunteers WHERE name = '#{name}'; ")
+    result[0]['project_id']
+  end
+
+  def self.find_volunteers(id)
+    result = DB.exec("SELECT * FROM volunteers WHERE id = '#{id}'; ")
+    result[0]
+  end
+
+  def self.find_id(name)
+    result = DB.exec("SELECT id FROM volunteers WHERE name = '#{name}'; ")
+    result[0]['id']
   end
 
   def self.find_volunteers_info(project_id)
@@ -51,6 +71,11 @@ class Volunteers
     project_id = attribute.fetch(:project_id)
     id  = attribute.fetch(:id).to_i
     DB.exec("UPDATE volunteers SET name = '#{new_name}',hour = '#{hour}', project_id = #{project_id}  WHERE id= #{id}; ")
+  end
+
+  def self.update_by_project_id(name)
+    id =project_id.to_i
+    DB.exec("UPDATE volunteers SET project_id = 0  WHERE name = #{name}; ")
   end
 
   def self.delete(name)

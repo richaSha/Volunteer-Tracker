@@ -1,0 +1,23 @@
+<ul class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li><a href="/project">Projects</a></li>
+  <li><a href="/project/<%= @id %>"><%= @project_name %></a></li>
+  <li><a class="active" href="#">Remove Volunteer</a></li>
+</ul>
+<div class="wrapper">
+  <div class="index_info">
+    <h2><%= @project_name %></h2>
+    <ul class="project_detail">
+      <li class="header">Volunteer Name</li>
+      <li class="header">Number of hour</li>
+      <% @volunteers_list.each do |volunteer| %>
+        <li><%= volunteer['name']%></li>
+        <li><%= volunteer['hour']%>
+          <a href="/project/del/<%=volunteer['name']%>" class="btn btn-info btn-xs">
+            <span class="glyphicon glyphicon-trash"></span>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+</div>
+</div>

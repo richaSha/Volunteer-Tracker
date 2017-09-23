@@ -1,17 +1,28 @@
 <ul class="breadcrumb">
   <li><a href="/">Home</a></li>
-  <li><a href="/project">Project</a></li>
-  <li><a class= "active" href="#">Project Detail</a></li>
+  <li><a href="/project">Projects</a></li>
+  <li><a class= "active" href="#"><%= @project_name %></a></li>
 </ul>
 <div class="wrapper">
   <div class="index_info">
+    <div class="crud_icon">
+      <a href="/project/add/<%= @id %>" class="btn btn-info btn-xs">
+        <span class="glyphicon glyphicon-plus"></span>
+      </a>
+      <a href="/project/edit/<%= @id %>" class="btn btn-info btn-xs">
+        <span class="glyphicon glyphicon-pencil"></span>
+      </a>
+      <a href="/project/delete/<%= @id %>" class="btn btn-info btn-xs">
+        <span class="glyphicon glyphicon-trash"></span>
+      </a>
+    </div>
     <h2><%= @project_name %></h2>
     <ul class="project_detail">
       <li class="header">Volunteer Name</li>
       <li class="header">Number of hour</li>
       <% @volunteers_list.each do |volunteer| %>
-        <li><%= volunteer['name']%></a></li>
-        <li><%= volunteer['hour']%></a></li>
+        <li><%= volunteer['name']%></li>
+        <li><%= volunteer['hour']%></li>
       <% end %>
     </ul>
 </div>

@@ -1,0 +1,31 @@
+<ul class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li><a href="/project">Projects</a></li>
+  <li><a href="/project/<%= @id %>"><%= @project_name %></a></li>
+  <li><a class="active" href="#">Enroll Volunteer</a></li>
+</ul>
+<div class="wrapper">
+  <div class="index_info">
+    <h2><%= @project_name %></h2>
+    <form class="" action="\project\add\<%= @id%>" method="post">
+      <input type="hidden" name="_method" value="patch">
+      <div class="input-group">
+        <span class="input-group-addon">Volunteer Name</span>
+        <select class="form-control" name="name">
+          <% @volunteers_list.each do |volunteer|%>
+            <option value="<%= volunteer['name']%>"><%=volunteer['name'] %></option>
+          <% end%>
+        </select>
+      </div>
+      <br>
+      <div class="input-group">
+        <span class="input-group-addon">Hour</span>
+        <input id="msg" type="text" class="form-control hour" name="hour" placeholder="Hour" disabled>
+      </div>
+      <br>
+      <input type="checkbox" id="enable_hour"/> Enter Hours<br />
+      <br>
+      <button type="Submit" class="btn btn-success">Add Info</button>
+    </form>
+</div>
+</div>

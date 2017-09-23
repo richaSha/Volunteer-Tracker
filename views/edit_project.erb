@@ -1,0 +1,25 @@
+<ul class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li><a href="/project">Projects</a></li>
+  <li><a href="/project/<%= @id %>"><%= @project_name %></a></li>
+  <li><a class="active" href="#">Edit Info</a></li>
+</ul>
+<div class="wrapper">
+  <div class="index_info">
+    <form class="" action="/project/<%= @id %>" method="post">
+      <input type="hidden" name="_method" value="patch">
+      <h2><input type="text" name="project" class="edit_input" value="<%= @project_name %>"> </h2>
+      <ul class="project_detail">
+        <li class="header">Volunteer Name</li>
+        <li class="header">Number of hour</li>
+        <% @volunteers_list.each do |volunteer| %>
+          <li><%= volunteer['name']%></a></li>
+          <input type="hidden" name="volunteer_name/<%=volunteer['id']%>" value="<%= volunteer['name']%>">
+          <input type="hidden" name="volunteer_id/<%=volunteer['id']%>" value="<%= volunteer['id']%>">
+          <li> <input type="text" name="hour/<%=volunteer['id']%>" class="edit_input" style="width:25%" value="<%= volunteer['hour']%>">
+        <% end %>
+      </ul>
+      <button type="Submit" class="btn btn-success">Save </button>
+    </form>
+</div>
+</div>
